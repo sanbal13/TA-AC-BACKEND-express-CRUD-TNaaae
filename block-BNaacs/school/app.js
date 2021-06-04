@@ -14,33 +14,33 @@ mongoose.connect('mongodb://localhost/sample',
 });
 
 // instantiate the app
-let school = express();
+let app = express();
 
 // middlewares
-school.use(express.json());
-school.use(express.urlencoded({extended: false}));
-school.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({extended: false}));
+app.use(logger('dev'));
 
 // setup view engine
-school.set('view engine', 'ejs');
-school.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 
-school.use((req, res, next) => {
+app.use((req, res, next) => {
     res.locals.framework = "Express";
     next();
 });
 
 //routes
-school.get('/', (req, res) => {
+app.get('/', (req, res) => {
     res.render('index', {name: "altCampus"});
 });
-school.get('/about', (req, res) => {
+app.get('/about', (req, res) => {
     let user = {name: 'User 1', age: 26, gender: 'Male'};
     res.render('about', {user: user});
 });
 
 // listener
-school.listen(PORT, () => {
+app.listen(PORT, () => {
     console.log('server is listening on port ' + PORT);
 });
 
