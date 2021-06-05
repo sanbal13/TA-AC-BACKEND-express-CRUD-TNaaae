@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update User</title>
+</head>
+<body>
+    <header>
+        <h1>
+            Update Form
+        </h1>
+    </header>
+    <main>
+        <!-- method attribute of form can take only two values "GET" and "POST" -->
+        <form action = "/users/abc" method="put" >
+            <input type="text" name="name" id="name" placeholder="Enter name">
+            <input type="number" name="age" id="age" placeholder="Enter age">
+            <input type="email" name="email" id="email" placeholder="Enter email">
+            <input type="submit" value="Update User">
+        </form>
+    </main>
+</body>
+</html>
