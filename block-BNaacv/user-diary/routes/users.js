@@ -1,6 +1,7 @@
 let express = require('express');
 let router = express.Router();
 
+
 router.get('/', (req, res) => {
     let users = ['Prashant', 'Suraj', 'Ankit', 'Ravi'];
     res.render('usersAll', {users: users});
@@ -22,8 +23,11 @@ router.delete('/:id', (req, res) => {
 router.get('/:id/edit', (req, res) => {
     res.render('updateForm');
 });
-router.put('/', (req, res) => {
+
+/* This route won't work as expected as PUT is not a valid value for method attribute of a form */
+router.put('/:id', (req, res) => {
     res.render('updateUser');
 });
+
 
 module.exports = router;
