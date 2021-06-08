@@ -6,7 +6,7 @@ let userSchema = new Schema({
     email: {type: String, lowercase: true, match: /@/ },
     age: {type: Number, min: 18, max: 100},
     username: {type: String, required: true} 
-});
+}, {timestamps: true});
 
 let User = mongoose.model('User', userSchema);
 
