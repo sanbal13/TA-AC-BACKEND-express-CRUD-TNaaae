@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single User Detail</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="flex navigation">
+            <a href="/">
+                <h2>
+                    UserDetail
+                </h2>
+            </a>
+        <a href ='/users' class='button'> Show Users </a>
+        </div>
+    </header>
+        
+    <main>      
+        <ul class="user-card-detail">
+            <li>Name: <%= user.name%></li>
+            <li>Email: <%= user.email%></li>
+            <li>Age: <%= user.age%></li>
+            <li>Username: <%= user.username%></li>
+            <a href='/users/<%= user.id %>/edit' class="button"> Edit</a>
+        </ul> 
+    </main>
+</body>
+</html>
